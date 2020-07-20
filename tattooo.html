@@ -52,6 +52,61 @@ font-family: 'Yeseva One', cursive;
     <select id="sele">
       <option>Choose a font family!</option>
     </select>
-    <script src="https://output.jsbin.com/nagovux.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var sect = document.getElementsByTagName('section')[0],
+    div = document.getElementsByTagName('div')[0],
+    span = document.getElementsByTagName('span'),
+    sfsv = document.getElementById('fsv'),
+    sfs = document.getElementById('fs'),
+    inp = document.getElementsByTagName('input'),
+    sls = document.getElementById('ls'),
+    sws = document.getElementById('ws'),
+    sd3 = document.getElementById('d3'),
+    sel = document.getElementById('sele');
+
+function active() {
+  'use strict';
+  sect.focus();
+  return;
+}
+window.setTimeout(function asd() {'use strict'; active(); }, 2000);
+
+var strFF = "font-family: 'Alice', serif; font-family: 'Comfortaa', cursive; font-family: 'Cormorant', serif; font-family: 'Cormorant Garamond', serif; font-family: 'Cormorant Infant', serif; font-family: 'EB Garamond', serif; font-family: 'El Messiri', sans-serif; font-family: 'Forum', cursive; font-family: 'Gabriela', serif; font-family: 'IBM Plex Serif', serif; font-family: 'Kurale', serif; font-family: 'Lobster', cursive; font-family: 'Merriweather', serif; font-family: 'Neucha', cursive; font-family: 'Noto Serif', serif; font-family: 'Pacifico', cursive; font-family: Playfair Display', serif; font-family: 'Prata', serif; font-family: 'PT Serif', serif; font-family: 'Roboto Slab', serif; font-family: 'Ruslan Display', cursive; font-family: 'Russo One', sans-serif; font-family: 'Source Serif Pro', serif; font-family: 'Vollkorn SC', serif; font-family: 'Yeseva One', cursive",
+    del = strFF.replace(/font-family:/g, '');
+
+function translate() {
+  var newArrFF = del.split(';');
+  console.log('FONT FAMILY: \n' + del);
+  for (var c = 0; c < newArrFF.length; c++) {
+    var opt = document.createElement('option'),
+        insert = document.createTextNode(newArrFF[c]);
+    opt.appendChild(insert);
+    sel.appendChild(opt);
+    opt.style.fontFamily = newArrFF[c];
+  }
+}
+translate();
+
+function move() {
+  'use strict';
+  div.textContent = sect.textContent;
+  div.style.fontSize = (sfs.value / 10) + 'mm';
+  //div.style.top = (document.body.offsetHeight / 2) - (div.offsetHeight / 2)+ 'px';
+  div.style.left = (document.body.offsetWidth / 2) - (div.offsetWidth / 2)+ 'px';
+  sfsv.textContent = sfs.value[0] + sfs.value[1] + '.' + sfs.value[2] + 'mm';
+  div.style.letterSpacing = (inp[1].value / 10) + 'mm';
+  sls.textContent = (inp[1].value / 10) + 'mm';
+  div.style.wordSpacing = (inp[2].value / 10) + 'mm';
+  sws.textContent = (inp[2].value / 10) + 'mm';
+  div.style.transform = 'rotateX(' + inp[3].value + 'deg)';
+  sd3.textContent = inp[3].value + '° deg';
+  div.style.fontWeight = (inp[4].value * 100);
+  fw.textContent = (inp[4].value * 100);
+  div.style.fontFamily = sel.value;
+}
+window.setInterval(move, 100);
+
+
+    </script>
   </body>
 </html>
