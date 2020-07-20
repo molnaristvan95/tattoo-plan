@@ -5,140 +5,53 @@
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Tattoo  plan">
   <title>Tattoo  plan</title>
+  <link href="https://output.jsbin.com/nagovux.css" type="text/css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <style type="text/css" rel="stylesheet">
-  :root{
-  
-}
-*{
-  margin:0;
-}
-:focus{
-  outline:none !important;
-}
-body{
-  background:linear-gradient(to bottom, #600, black, #500);
-  height:100vh;
-}
-section{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:gray;
-  width:50%;
-  margin:3vh 25%;
-  height:3rem;
-  font-size:2rem;
-  animation:pulse .3s;
-  animation-iteration-count:6;
-  color:skyblue;
-  background:linear-gradient(to right,transparent, gray, transparent);
-  position:relative;
-  border-radius:5px;
-}
-@keyframes pulse{
-  25%{color:yellow;}
-  75%{color:black;}
-}
-section::after{
-  position:absolute;
-  content:'';
-  width:101%;
-  height:103%;
-  left:-.5%;
-  top:-2%;
-  background:repeating-conic-gradient(red 1%, blue 2%, red 3%);
-  z-index:-1;
-  display:none;
-  border-radius:5px;
-  animation:pp .5s linear;
-  animation-iteration-count: 4;
-}
-@keyframes pp{
-  0%{display:block !important; opacity:0; background:repeating-conic-gradient(red 1%, blue 2%, red 3%);}
-  100%{display:block !important; opacity:1; background:repeating-conic-gradient(red 1%, blue 2%, red 3%);}
-}
-section:hover{
-  background:linear-gradient(to right, #600, gray, #600);
-}
-section:hover::after{
-  display:block;
-}
-input[type=range] {
-  -webkit-appearance: none;
-  margin:1.75vh 12.5%;
-  width: 75%;
-}
-input[type=range]:focus {
-  outline: none;
-}
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 1vh;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #3071a9;
-  border-radius: 1.3px;
-  border: 0.2px solid #010101;
-}
-input[type=range]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 50%;
-  background: #ffffff;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -.5rem;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: orange;
-}
-span{
-  display:block;
-  text-align:center;
-  color:#ffa9;
-  font-size:1.25rem;
-}
-div{
-  width:15cm;
-  height:2cm;
-  background:green;
-  border:.5mm dashed black;
-  position:fixed;
-  top:calc(50% - 3rem);
-  left:25%;
-}
-  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap&family=Comfortaa:wght@300&family=Cormorant+Garamond:wght@300&family=Cormorant+Infant:wght@300&family=Cormorant:wght@300&family=EB+Garamond&family=El+Messiri&family=Forum&family=Gabriela&family=IBM+Plex+Serif:wght@100&family=Kurale&family=Lobster&family=Merriweather:wght@300&family=Neucha&family=Noto+Serif&family=PT+Serif&family=Pacifico&family=Playfair+Display&family=Prata&family=Roboto+Slab:wght@100&family=Ruslan+Display&family=Russo+One&family=Source+Serif+Pro:wght@200&family=Vollkorn+SC&family=Yeseva+One&display=swap" rel="stylesheet">
+    <!--
+font-family: 'Alice', serif;
+font-family: 'Comfortaa', cursive;
+font-family: 'Cormorant', serif;
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Cormorant Infant', serif;
+font-family: 'EB Garamond', serif;
+font-family: 'El Messiri', sans-serif;
+font-family: 'Forum', cursive;
+font-family: 'Gabriela', serif;
+font-family: 'IBM Plex Serif', serif;
+font-family: 'Kurale', serif;
+font-family: 'Lobster', cursive;
+font-family: 'Merriweather', serif;
+font-family: 'Neucha', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Prata', serif;
+font-family: 'PT Serif', serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Ruslan Display', cursive;
+font-family: 'Russo One', sans-serif;
+font-family: 'Source Serif Pro', serif;
+font-family: 'Vollkorn SC', serif;
+font-family: 'Yeseva One', cursive;
+-->
   </head>
   <body>
     <section contenteditable="true">без страха</section>
     <div>asd</div>
-    <span>Font size:</span>
-    <input type="range" min="0" max="100" value="50">
-    <span>Letter spacing:</span>
-    <input type="range" min="0" max="100" value="50">
-    <span>Word spacing:</span>
-    <input type="range" min="0" max="100" value="50">
-    <span>Word spacing:</span>
-    <script type="text/javascript">
-    var sect = document.getElementsByTagName('section')[0],
-    div = document.getElementsByTagName('div')[0];
-function active() {
-  'use strict';
-  sect.focus();
-  return;
-}
-window.setTimeout(function asd() {'use strict'; active(); }, 2000);
-
-function move() {
-  'use strict';
-  //div.textContent = sect.textContent;
-  div.style.width = sect.textContent.length * 1 + 'cm';
-  div.style.left = (document.body.offsetWidth / 2) - (div.offsetWidth / 2)+ 'px';
-}
-window.setInterval(move, 100);
-    </script>
+    <span>Font size: <span id="fsv"></span></span>
+    <input id="fs" type="range" min="3" max="500" value="200" ondblclick="this.value='200'">
+    <span>Letter spacing: <span id="ls"></span></span>
+    <input type="range" min="-50" max="100" value="0" ondblclick="this.value='0'">
+    <span>Word spacing: <span id="ws"></span></span>
+    <input type="range" min="-50" max="100" value="0" ondblclick="this.value='0'">
+    <span>3D: <span id="d3"></span></span>
+    <input type="range" min="-45" max="45" value="0" ondblclick="this.value='0'">
+    <span>Font weight: <span id="fw"></span></span>
+    <input type="range" min="1" max="9" value="1" ondblclick="this.value='1'">
+    <select id="sele">
+      <option>Choose a font family!</option>
+    </select>
+    <script src="https://output.jsbin.com/nagovux.js" type="text/javascript"></script>
   </body>
 </html>
